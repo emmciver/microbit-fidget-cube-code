@@ -2,6 +2,8 @@ input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
     if (true) {
         strip.showRainbow(1, 360)
         music.playMelody("G B A G C5 B A B ", 215)
+    } else {
+        music.stopAllSounds()
     }
 })
 input.onButtonPressed(Button.A, function () {
