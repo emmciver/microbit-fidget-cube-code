@@ -16,20 +16,61 @@ input.onGesture(Gesture.TiltLeft, function () {
     basic.pause(1000)
 })
 input.onButtonPressed(Button.B, function () {
-    basic.showIcon(IconNames.Square)
+    basic.showLeds(`
+        # # # # #
+        # . . . #
+        # . . . #
+        # . . . #
+        # # # # #
+        `)
     basic.pause(500)
-    basic.showIcon(IconNames.SmallSquare)
+    basic.showLeds(`
+        . . . . .
+        . # # # .
+        . # . # .
+        . # # # .
+        . . . . .
+        `)
     basic.pause(500)
-    basic.showIcon(IconNames.SmallDiamond)
+    basic.showLeds(`
+        . . . . .
+        . . # . .
+        . # . # .
+        . . # . .
+        . . . . .
+        `)
     basic.pause(500)
-    basic.showIcon(IconNames.Diamond)
+    basic.showLeds(`
+        . . # . .
+        . # # # .
+        # # . # #
+        . # # # .
+        . . # . .
+        `)
     basic.pause(500)
-    basic.showIcon(IconNames.Chessboard)
+    basic.showLeds(`
+        . . # . .
+        . # . # .
+        # . . . #
+        . # . # .
+        . . # . .
+        `)
+    basic.pause(500)
+    basic.showLeds(`
+        # . # . #
+        . # . # .
+        # . # . #
+        . # . # .
+        # . # . #
+        `)
     basic.pause(500)
     basic.clearScreen()
 })
 input.onPinPressed(TouchPin.P1, function () {
-    control.reset()
+    led.stopAnimation()
+    basic.clearScreen()
+    music.stopAllSounds()
+    strip.showColor(neopixel.colors(NeoPixelColors.Black))
 })
 input.onGesture(Gesture.Shake, function () {
     Hand = randint(1, 3)
