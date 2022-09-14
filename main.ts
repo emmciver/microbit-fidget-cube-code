@@ -67,7 +67,6 @@ input.onPinPressed(TouchPin.P1, function () {
     basic.clearScreen()
     music.stopAllSounds()
     strip.showColor(neopixel.colors(NeoPixelColors.Black))
-    control.reset()
 })
 input.onGesture(Gesture.Shake, function () {
     Hand = randint(1, 3)
