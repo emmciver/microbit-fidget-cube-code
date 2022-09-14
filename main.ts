@@ -18,54 +18,48 @@ input.onGesture(Gesture.TiltLeft, function () {
     basic.pause(1000)
 })
 input.onButtonPressed(Button.B, function () {
-    basic.showLeds(`
-        # # # # #
-        # . . . #
-        # . . . #
-        # . . . #
-        # # # # #
-        `)
-    basic.pause(500)
-    basic.showLeds(`
-        . . . . .
-        . # # # .
-        . # . # .
-        . # # # .
-        . . . . .
-        `)
-    basic.pause(500)
-    basic.showLeds(`
-        . . . . .
-        . . # . .
-        . # . # .
-        . . # . .
-        . . . . .
-        `)
-    basic.pause(500)
-    basic.showLeds(`
-        . . # . .
-        . # # # .
-        # # . # #
-        . # # # .
-        . . # . .
-        `)
-    basic.pause(500)
-    basic.showLeds(`
-        . . # . .
-        . # . # .
-        # . . . #
-        . # . # .
-        . . # . .
-        `)
-    basic.pause(500)
-    basic.showLeds(`
-        # . # . #
-        . # . # .
-        # . # . #
-        . # . # .
-        # . # . #
-        `)
-    basic.pause(500)
+    for (let index = 0; index < 3; index++) {
+        basic.showLeds(`
+            # # # # #
+            # . . . #
+            # . . . #
+            # . . . #
+            # # # # #
+            `)
+        basic.pause(500)
+        basic.showLeds(`
+            . . . . .
+            . # # # .
+            . # . # .
+            . # # # .
+            . . . . .
+            `)
+        basic.pause(500)
+        basic.showLeds(`
+            . . . . .
+            . . # . .
+            . # . # .
+            . . # . .
+            . . . . .
+            `)
+        basic.pause(500)
+        basic.showLeds(`
+            . . # . .
+            . # . # .
+            # . . . #
+            . # . # .
+            . . # . .
+            `)
+        basic.pause(500)
+        basic.showLeds(`
+            # . # . #
+            . # . # .
+            # . # . #
+            . # . # .
+            # . # . #
+            `)
+        basic.pause(500)
+    }
     basic.clearScreen()
 })
 input.onPinPressed(TouchPin.P1, function () {
@@ -73,6 +67,7 @@ input.onPinPressed(TouchPin.P1, function () {
     basic.clearScreen()
     music.stopAllSounds()
     strip.showColor(neopixel.colors(NeoPixelColors.Black))
+    control.reset()
 })
 input.onGesture(Gesture.Shake, function () {
     Hand = randint(1, 3)
